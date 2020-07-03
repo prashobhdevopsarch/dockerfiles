@@ -1,0 +1,7 @@
+FROM centos:7
+RUN yum install php php-mysql httpd mariadb-server mariadb -y 
+RUN echo "<?php phpinfo(); ?>" > /var/www/html/test.php
+COPY docker.crt /docker.crt
+COPY docker.key /docker.key
+CMD apachectl -DFOREGROUND
+

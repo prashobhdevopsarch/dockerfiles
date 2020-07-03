@@ -1,0 +1,7 @@
+<VirtualHost *:443>
+	ServerAdmin email@address
+	DocumentRoot "/var/www/html/"
+	ServerName 192.168.1.149 
+	ErrorLog /var/www/html/error.log
+
+</VirtualHost>
