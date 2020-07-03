@@ -1,0 +1,6 @@
+FROM php:7.1-apache 
+#RUN apt-get install  unzip vim nano -y
+WORKDIR /var/www/html
+ADD https://github.com/prashobhdevopsarch/usapp/archive/master.zip ./code.zip
+RUN unzip code.zip && mv usapp-master/* .  
+CMD apachectl -DFOREGROUND

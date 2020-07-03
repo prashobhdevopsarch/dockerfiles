@@ -1,0 +1,6 @@
+FROM centos
+RUN yum -y install httpd php unzip
+ENV HTML testweb 
+ADD https://github.com/prashobhdevopsarch/$HTML/archive/master.zip /var/www/html/code.zip
+RUN cd /var/www/html && unzip code.zip && mv /var/www/html/$HTML-master/* /var/www/html 
+CMD apachectl -DFOREGROUND
